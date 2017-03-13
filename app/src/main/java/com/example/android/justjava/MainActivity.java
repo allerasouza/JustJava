@@ -29,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        String priceMessage = "Free";
+        int price = quantity * 5;
+        String priceMessage = "Total = $" + price;
+        priceMessage += "\nThank you!";
         displayMessage(priceMessage);
     }
 
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
     public void decrement(View view) {
 
         quantity = quantity - 1;
+        if(quantity < 0)
+            quantity = 0;
         display(quantity);
         //displayPrice(quantity*5);
     }
